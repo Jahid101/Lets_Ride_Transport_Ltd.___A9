@@ -1,0 +1,21 @@
+[{
+    "id": 1,
+    "vehicleName": "BIKE",
+    "vehicleImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZRlmM7QqL5OHUktrqWGCFDzKEsvwt2Fsm-Q&usqp=CAU",
+    "vehicleDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore expedita quae, eligendi excepturi at dignissimos? Itaque reiciendis fuga quam est."
+  }, {
+    "id": 2,
+    "vehicleName": "CAR",
+    "vehicleImage": "https://atlas-content-cdn.pixelsquid.com/stock-images/classic-european-compact-car-hatchback-4o7XZQ6-600.jpg",
+    "vehicleDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore expedita quae, eligendi excepturi at dignissimos? Itaque reiciendis fuga quam est."
+  }, {
+    "id": 3,
+    "vehicleName": "BUS",
+    "vehicleImage": "https://images.pond5.com/mitsubishi-fusou-aero-star-keio-3d-091539965_iconl.jpeg",
+    "vehicleDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore expedita quae, eligendi excepturi at dignissimos? Itaque reiciendis fuga quam est."
+  }, {
+    "id": 4,
+    "vehicleName": "TRAIN",
+    "vehicleImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCDdOazPvLU8M4dhtGMyTfecr_FeKJEp24kg&usqp=CAU",
+    "vehicleDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore expedita quae, eligendi excepturi at dignissimos? Itaque reiciendis fuga quam est."
+  }]
