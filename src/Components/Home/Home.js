@@ -13,7 +13,6 @@ const Home = () => {
 
     return (
         <div className="container">
-            <Navbar></Navbar>
             {
                 vehicles.map(vehicle => <Card vehicle = {vehicle}></Card>)
             }

@@ -1,12 +1,19 @@
 import React from 'react';
+import { useHistory } from 'react-router';
 import './Card.css';
 
 const Card = (props) => {
 
     const { vehicleImage, vehicleName, vehicleDescription } = props.vehicle;
 
+    const history =useHistory();
+    
+    const handleCardClick = () => {
+        history.push('/destination');
+    }
+
     return (
-            <div class="row row-cols-1 row-cols-md-2 g-4 abc d-flex mt-5">
+            <div onClick={handleCardClick} class="row row-cols-1 row-cols-md-2 g-4 cardInfo d-flex mt-5">
                 <div class="col">
                     <div class="card">
                         <img src={vehicleImage} class="card-img-top" alt="" />

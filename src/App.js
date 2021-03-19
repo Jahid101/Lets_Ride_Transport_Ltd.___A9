@@ -9,11 +9,14 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import Navbar from './Components/Navbar/Navbar';
+import Register from './Components/Register/Register';
 
 function App() {
 
   return (
     <Router>
+      <Navbar></Navbar>
       <Switch>
         <Route exact path="/">
           <Home></Home>
@@ -23,6 +26,9 @@ function App() {
         </Route>
         <Route path="/login">
           <Login></Login>
+        </Route>
+        <Route path="/register">
+          <Register></Register>
         </Route>
         <Route path="/destination">
           <Destination></Destination>
