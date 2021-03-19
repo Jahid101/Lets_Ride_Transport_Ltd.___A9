@@ -38,7 +38,7 @@ const Register = () => {
                 setUser(user);
                 setLoggedInUser(user);
                 history.replace(from);
-                console.log(user);
+                // console.log(user);
             })
             .catch((error) => {
                 var errorCode = error.code;

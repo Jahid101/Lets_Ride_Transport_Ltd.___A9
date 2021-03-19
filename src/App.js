@@ -41,10 +41,12 @@ function App() {
             <Register></Register>
           </Route>
           <PrivateRoute path="/destination">
-            <Destination></Destination>
+            {/* <Destination></Destination> */}
+            <Login></Login>
           </PrivateRoute>
           <PrivateRoute path="/destinationdetails">
-            <DestinationDetails></DestinationDetails>
+            {/* <DestinationDetails></DestinationDetails> */}
+            <Login></Login>
           </PrivateRoute>
           <Route path="*">
             <Error></Error>

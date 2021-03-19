@@ -47,7 +47,7 @@ const AnotherLogin = () => {
     return (
         <div>
             <div class="d-flex border w-25 rounded mb-5 btn" onClick={handleGoogleLoginIn}>
-                <img src="https://img-authors.flaticon.com/google.jpg" class="mr-2" alt="" />
+                <img style={{width: '25px'}} src="https://img-authors.flaticon.com/google.jpg" class="mr-2" alt="" />
                 <h6>Continue with Google</h6>
             </div>
         </div>
