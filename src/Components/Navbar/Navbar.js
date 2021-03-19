@@ -17,14 +17,18 @@ const Navbar = () => {
                             <a class="nav-link active" href="/destination">Destination</a>
                         </li>
                         <li class="nav-item">
-                            <button class="btn btn-info mr-5">
-                                <a class="nav-link active" href="/register">Register</a>
+                            <a class="nav-link active" href="/register">
+                                <button class="btn btn-info mr-5">
+                                    Register
                             </button>
+                            </a>
                         </li>
                         <li class="nav-item active">
-                            <button class="btn btn-success">
-                                <a class="nav-link active" href="/login" tabindex="-1" aria-disabled="true">Login</a>
+                            <a class="nav-link active" href="/login" tabindex="-1" aria-disabled="true">
+                                <button class="btn btn-success">
+                                    Login
                             </button>
+                            </a>
                         </li>
                     </ul>
                 </div>

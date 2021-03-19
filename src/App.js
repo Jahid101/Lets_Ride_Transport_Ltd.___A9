@@ -11,33 +11,47 @@ import {
 } from "react-router-dom";
 import Navbar from './Components/Navbar/Navbar';
 import Register from './Components/Register/Register';
+import DestinationDetails from './Components/DestinationDetails/DestinationDetails';
+import { createContext, useState } from 'react';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+
+
+export const UserContext = createContext();
+
 
 function App() {
 
+  const [loggedInUser, setLoggedInUser] = useState({});
+
   return (
-    <Router>
-      <Navbar></Navbar>
-      <Switch>
-        <Route exact path="/">
-          <Home></Home>
-        </Route>
-        <Route path="/home">
-          <Home></Home>
-        </Route>
-        <Route path="/login">
-          <Login></Login>
-        </Route>
-        <Route path="/register">
-          <Register></Register>
-        </Route>
-        <Route path="/destination">
-          <Destination></Destination>
-        </Route>
-        <Route path="*">
-          <Error></Error>
-        </Route>
-      </Switch>
-    </Router>
+    <UserContext.Provider value = {[loggedInUser, setLoggedInUser]}>
+      <Router>
+        <Navbar></Navbar>
+        <Switch>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route path="/home">
+            <Home></Home>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route path="/register">
+            <Register></Register>
+          </Route>
+          <PrivateRoute path="/destination">
+            <Destination></Destination>
+          </PrivateRoute>
+          <PrivateRoute path="/destinationdetails">
+            <DestinationDetails></DestinationDetails>
+          </PrivateRoute>
+          <Route path="*">
+            <Error></Error>
+          </Route>
+        </Switch>
+      </Router>
+    </UserContext.Provider>
   );
 }
 

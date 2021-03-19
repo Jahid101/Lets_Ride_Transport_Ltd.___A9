@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Card from '../Card/Card';
-import Navbar from '../Navbar/Navbar';
-import fakeData from '../FakeData.json';
+import fakeData from '../../data/FakeData.json';
 
 const Home = () => {
 
