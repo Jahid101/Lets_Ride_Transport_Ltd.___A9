@@ -1,0 +1,14 @@
+.abc img{
+    height: 200px;
+    width: 200px;
+}
+.abc{
+    width: 450px;
+    border: 1px solid grey;
+    border-radius: 15px;
+    float: left;
+    margin-top: 15px;
+    margin-left: 100px;
+    margin-bottom: 15px;
+    background-color: white;
+}

@@ -2,10 +2,14 @@ import React from 'react';
 
 const Navbar = () => {
     return (
-        <nav class="navbar navbar-expand-lg navbar-light bg-light mt-5 mb-5">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
+                <a class="navbar-brand" href="/"><strong>Lets Ride Transport Ltd.</strong></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/home">Home</a>
                         </li>
@@ -15,7 +19,7 @@ const Navbar = () => {
                         <li class="nav-item">
                             <a class="nav-link active" href="/">Contuct us</a>
                         </li>
-                        <li class="nav-item active ml-5">
+                        <li class="nav-item active">
                             <button class="btn btn-success">
                                 <a class="nav-link active" href="/login" tabindex="-1" aria-disabled="true">Login</a>
                             </button>
