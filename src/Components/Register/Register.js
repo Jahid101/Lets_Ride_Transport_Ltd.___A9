@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useHistory, useLocation } from 'react-router';
 import { UserContext } from '../../App';
-import AnotherLogin from '../AnotherLogin/AnotherLogin';
 import firebase from "firebase/app";
 
 
