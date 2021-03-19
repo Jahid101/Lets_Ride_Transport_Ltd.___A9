@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 import { useHistory, useLocation } from 'react-router';
 import { UserContext } from '../../App';
 import AnotherLogin from '../AnotherLogin/AnotherLogin';
+import firebase from "firebase/app";
+
 
 const Register = () => {
 
@@ -10,39 +12,61 @@ const Register = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const history = useHistory();
     const location = useLocation();
-    let { from } = location.state || { from: { pathname: "/" } };
+    let { from } = location.state || { from: { pathname: "/login" } };
 
     const [user, setUser] = useState({
         isSignedIn: false,
         name: '',
         email: '',
+        password: '',
         photo: '',
         error: '',
         success: false
     });
 
+    const handleBlur = (e) => {
+        const newUserInfo = { ...user }
+        newUserInfo[e.target.name] = e.target.value;
+        setUser(newUserInfo);
+        // console.log(e.target.name, e.target.value);
+    }
 
+    const handleRegister = (e) => {
+        firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
+            .then((userCredential) => {
+                var user = userCredential.user;
+                setUser(user);
+                setLoggedInUser(user);
+                history.replace(from);
+                console.log(user);
+            })
+            .catch((error) => {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+            });
+        e.preventDefault();
+    }
 
     return (
         <div class="mt-5">
             <h3 class="text-center">Register</h3>
-            <form className="container w-50" onSubmit={handleSubmit}>
+            <form className="container w-50" onSubmit={handleRegister}>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Name</label>
-                    <input type="text" name="name" placeholder="Name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required />
+                    <input type="text" onBlur={handleBlur} name="name" placeholder="Name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required />
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" required />
+                    <input type="email" onBlur={handleBlur} name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" required />
                     <div id="emailHelp" class="form-text"><small>We'll never share your email with anyone else.</small></div>
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required />
+                    <label for="exampleInputPassword1" class="form-label">Password (at least 6 digit)</label>
+                    <input type="password" onBlur={handleBlur} name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required />
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required />
+                    <input type="password" onBlur={handleBlur} name="Confirm Password" class="form-control" id="exampleInputPassword2" placeholder="Password" required />
                 </div>
                 <input class="btn btn-primary mb-2" type="submit" value={newUser ? 'Register' : 'Login'} />
             </form>

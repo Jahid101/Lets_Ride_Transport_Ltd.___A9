@@ -35,7 +35,6 @@ const AnotherLogin = () => {
                 setUser(user);
                 setLoggedInUser(user);
                 history.replace(from);
-                // console.log(user);
             })
             .catch((error) => {
                 var errorCode = error.code;
