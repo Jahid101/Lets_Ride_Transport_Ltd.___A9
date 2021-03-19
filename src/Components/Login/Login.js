@@ -43,7 +43,7 @@ const Login = () => {
                 history.replace(from);
                 user.error = '';
                 user.success = true;
-                // console.log(user);
+                console.log(user);
             })
             .catch((error) => {
                 var errorCode = error.code;

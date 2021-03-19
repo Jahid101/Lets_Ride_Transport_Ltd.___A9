@@ -4,12 +4,12 @@ import './Card.css';
 
 const Card = (props) => {
 
-    const { vehicleImage, vehicleName, vehicleDescription } = props.vehicle;
+    const { vehicleImage, vehicleName, vehicleDescription, id } = props.vehicle;
 
     const history =useHistory();
     
     const handleCardClick = () => {
-        history.push('/destination');
+        history.push(`/destination/${id}`);
     }
 
     return (

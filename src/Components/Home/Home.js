@@ -13,7 +13,7 @@ const Home = () => {
     return (
         <div className="container">
             {
-                vehicles.map(vehicle => <Card vehicle = {vehicle}></Card>)
+                vehicles.map(vehicle => <Card vehicle = {vehicle} ></Card>)
             }
         </div>
     );
