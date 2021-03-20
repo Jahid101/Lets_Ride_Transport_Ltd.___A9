@@ -1,7 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
+// import firebase from '../Login/Firebase.Config';
 
 const Navbar = () => {
+
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
+    const handleSignOut = () => {
+        // firebase.auth().signOut().then(() => {
+        //     let signedOutUser = {
+        //         isSignedIn: false,
+        //         name: '',
+        //         email: '',
+        //         password: '',
+        //         photo: '',
+        //         error: '',
+        //         success: false
+        //     }
+        //     setLoggedInUser(signedOutUser);
+        // })
+        //     .catch((error) => {
+
+        //     });
+    }
+
     return (
         <nav class="navbar navbar-expand-lg navbar-light bg-light container">
             <div class="container-fluid">
@@ -19,16 +42,17 @@ const Navbar = () => {
                         </li>
                         <li class="nav-item">
                             <Link class="nav-link active" to="/register">
-                            <button class="btn btn-info mr-5">
-                                Register
+                                <button class="btn btn-info mr-5">
+                                    Register
                             </button>
                             </Link>
                         </li>
                         <li class="nav-item active">
+                            <p>{loggedInUser.email}</p>
+                        </li>
+                        <li class="nav-item active">
                             <Link class="nav-link active" to="/login" tabindex="-1" aria-disabled="true">
-                                <button class="btn btn-success">
-                                    Login
-                            </button>
+                                <input type="submit" class="btn btn-success" onClick={handleSignOut} value={loggedInUser.email ? 'Log Out' : 'Log In'} />
                             </Link>
                         </li>
                     </ul>

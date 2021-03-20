@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { useHistory, useLocation } from 'react-router';
 import { UserContext } from '../../App';
 import firebase from "firebase/app";
+import { Link } from 'react-router-dom';
 
 
 const Register = () => {
@@ -11,7 +12,7 @@ const Register = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const history = useHistory();
     const location = useLocation();
-    let { from } = location.state || { from: { pathname: "/login" } };
+    let { from } = location.state || { from: { pathname: "/" } };
 
     const [user, setUser] = useState({
         isSignedIn: false,
@@ -27,7 +28,6 @@ const Register = () => {
         const newUserInfo = { ...user }
         newUserInfo[e.target.name] = e.target.value;
         setUser(newUserInfo);
-        // console.log(e.target.name, e.target.value);
     }
 
     const handleRegister = (e) => {
@@ -37,7 +37,7 @@ const Register = () => {
                 setUser(user);
                 setLoggedInUser(user);
                 history.replace(from);
-                // console.log(user);
+                updateUserName(user.name);
             })
             .catch((error) => {
                 var errorCode = error.code;
@@ -45,6 +45,21 @@ const Register = () => {
             });
         e.preventDefault();
     }
+
+    const updateUserName = name => {
+        const user = firebase.auth().currentUser;
+
+        user.updateProfile({
+            displayName: name
+
+        })
+            .then(function () {
+                console.log('user name Updated SuccessFully');
+            })
+            .catch(function (error) {
+            });
+    }
+
 
     return (
         <div class="mt-5">
@@ -70,7 +85,7 @@ const Register = () => {
                 <input class="btn btn-primary mb-2" type="submit" value={newUser ? 'Register' : 'Login'} />
             </form>
             <div>
-                <p class="container text-center mb-3"><small>Already have an account? </small><a to="/login">login</a></p>
+                <p class="container text-center mb-3"><small>Already have an account? </small><Link to="/login">login</Link></p>
             </div>
         </div>
     );

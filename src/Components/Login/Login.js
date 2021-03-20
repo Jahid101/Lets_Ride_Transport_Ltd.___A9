@@ -4,12 +4,10 @@ import AnotherLogin from '../AnotherLogin/AnotherLogin';
 import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router';
 import firebase from "firebase/app";
+import { Link } from 'react-router-dom';
 
 
 const Login = () => {
-
-    const [newUser, setNewUser] = useState(true);
-
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const history = useHistory();
@@ -30,7 +28,6 @@ const Login = () => {
         const newUserInfo = { ...user }
         newUserInfo[e.target.name] = e.target.value;
         setUser(newUserInfo);
-        console.log(e.target.name, e.target.value);
     }
 
     const handleLogin = (e) => {
@@ -42,12 +39,14 @@ const Login = () => {
                 setUser(newUserInfo);
                 setLoggedInUser(newUserInfo);
                 history.replace(from);
+                console.log(newUserInfo);
             })
             .catch((error) => {
                 const newUserInfo = { ...user };
                 newUserInfo.error = error.message;
                 newUserInfo.success = false;
                 setUser(newUserInfo);
+                console.log(newUserInfo.error);
             });
         e.preventDefault();
     }
@@ -67,9 +66,10 @@ return (
                 <input type="password" name="password" onBlur={handleBlur} class="form-control" id="exampleInputPassword1" required />
             </div>
             <input class="btn btn-primary mb-3" type="submit" value="Login" />
+            <p style={{color: 'red'}}>{user.error}</p>
         </form>
         <div>
-            <p><small>Don't have an account?</small> <a to="/register">Register</a></p>
+            <p><small>Don't have an account?</small> <Link to="/register">Register</Link></p>
         </div>
         <AnotherLogin></AnotherLogin>
     </div>

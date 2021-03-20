@@ -24,15 +24,8 @@ const Destination = () => {
         const newDestinationInfo = { ...destination }
         newDestinationInfo[e.target.name] = e.target.value;
         setDestination(newDestinationInfo);
-        // console.log(e.target.name, e.target.value);
     }
 
-    let locationFrom;
-    let locationTo;
-    const handleShowDestination = () => {
-        locationFrom = <h3>{destination.from}</h3>;
-        locationTo = destination.to;
-    }
 
     return (
         <div class="d-flex container">
@@ -46,7 +39,7 @@ const Destination = () => {
                     <input type="text" onBlur={handleBlur} name="to" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required />
                 </div>
 
-                <button onClick={handleShowDestination} class="btn btn-success">Search</button>
+                <button class="btn btn-success">Search</button>
                 <div class="mt-5">
                     <h5>From: <strong>{destination.from}</strong> </h5>
                     <h5>To: <strong>{destination.to}</strong> </h5>
