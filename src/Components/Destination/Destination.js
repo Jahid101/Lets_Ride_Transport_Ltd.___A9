@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Map from '../Map/Map';
 import fakeData from '../../data/FakeData.json';
+import ViewMap from '../ViewMap/ViewMap';
 
 
 const Destination = () => {
@@ -58,7 +58,7 @@ const Destination = () => {
                 </div>
             </div>
             <div class="m-5">
-                <Map></Map>
+                <ViewMap></ViewMap>
             </div>
         </div>
     );
