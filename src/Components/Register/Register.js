@@ -70,7 +70,7 @@ const Register = () => {
                 <input class="btn btn-primary mb-2" type="submit" value={newUser ? 'Register' : 'Login'} />
             </form>
             <div>
-                <p class="container text-center mb-3"><small>Already have an account? </small><a href="/login">login</a></p>
+                <p class="container text-center mb-3"><small>Already have an account? </small><a to="/login">login</a></p>
             </div>
         </div>
     );

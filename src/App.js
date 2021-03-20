@@ -13,6 +13,7 @@ import Navbar from './Components/Navbar/Navbar';
 import Register from './Components/Register/Register';
 import { createContext, useState } from 'react';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import SelectRide from './Components/SelectRide/SelectRide';
 
 
 export const UserContext = createContext();
@@ -41,6 +42,9 @@ function App() {
           </Route>
           <PrivateRoute path="/destination/:id">
             <Destination></Destination>
+          </PrivateRoute>
+          <PrivateRoute path="/destination">
+            <SelectRide></SelectRide>
           </PrivateRoute>
           <Route path="*">
             <Error></Error>
