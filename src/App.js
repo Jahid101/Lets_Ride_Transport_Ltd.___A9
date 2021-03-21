@@ -14,6 +14,7 @@ import Register from './Components/Register/Register';
 import { createContext, useState } from 'react';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import SelectRide from './Components/SelectRide/SelectRide';
+import Booking from './Components/Booking/Booking';
 
 
 export const UserContext = createContext();

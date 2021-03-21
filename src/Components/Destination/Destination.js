@@ -25,7 +25,7 @@ const Destination = () => {
         newDestinationInfo[e.target.name] = e.target.value;
         setDestination(newDestinationInfo);
     }
-
+    
 
     return (
         <div class="d-flex container">
@@ -38,23 +38,22 @@ const Destination = () => {
                     <label for="exampleInputEmail1" class="form-label">To</label>
                     <input type="text" onBlur={handleBlur} name="to" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required />
                 </div>
-
-                <button class="btn btn-success">Search</button>
+                    <button class="btn btn-success">Search</button>
                 <div class="mt-5">
                     <h5>From: <strong>{destination.from}</strong> </h5>
                     <h5>To: <strong>{destination.to}</strong> </h5>
                 </div>
                 <div class="border rounded mt-3 mb-3">
                     <img style={{ width: '75px' }} src={vehicle.vehicleImage} alt="" />
-                    <img class="ml-3" style={{ width: '40px' }} src="https://static.thenounproject.com/png/292059-200.png" alt=""/> <strong> {vehicle.vehicleSeat}</strong> <strong class="ml-5"> ${vehicle.ticketPrice}</strong>
+                    <img class="ml-3" style={{ width: '40px' }} src="https://static.thenounproject.com/png/292059-200.png" alt="" /> <strong> {vehicle.vehicleSeat}</strong> <strong class="ml-5"> ${vehicle.ticketPrice}</strong>
                 </div>
                 <div class="border rounded mt-3 mb-3">
                     <img style={{ width: '75px' }} src={vehicle.vehicleImage} alt="" />
-                    <img class="ml-3" style={{ width: '40px' }} src="https://static.thenounproject.com/png/292059-200.png" alt=""/> <strong> {vehicle.vehicleSeat}</strong> <strong class="ml-5"> ${vehicle.ticketPrice}</strong>
+                    <img class="ml-3" style={{ width: '40px' }} src="https://static.thenounproject.com/png/292059-200.png" alt="" /> <strong> {vehicle.vehicleSeat}</strong> <strong class="ml-5"> ${vehicle.ticketPrice}</strong>
                 </div>
                 <div class="border rounded mt-3 mb-3">
                     <img style={{ width: '75px' }} src={vehicle.vehicleImage} alt="" />
-                    <img class="ml-3" style={{ width: '40px' }} src="https://static.thenounproject.com/png/292059-200.png" alt=""/> <strong> {vehicle.vehicleSeat}</strong> <strong class="ml-5"> ${vehicle.ticketPrice}</strong>
+                    <img class="ml-3" style={{ width: '40px' }} src="https://static.thenounproject.com/png/292059-200.png" alt="" /> <strong> {vehicle.vehicleSeat}</strong> <strong class="ml-5"> ${vehicle.ticketPrice}</strong>
                 </div>
             </div>
             <div class="container m-5 col-md-6 col-lg-6 col-sm-12">
