@@ -4,27 +4,27 @@
     "vehicleImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZRlmM7QqL5OHUktrqWGCFDzKEsvwt2Fsm-Q&usqp=CAU",
     "vehicleSeat": 2,
     "ticketPrice": 50,
-    "vehicleDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore expedita quae, eligendi excepturi at dignissimos? Itaque reiciendis fuga quam est."
+    "vehicleDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore expedita quae."
   }, {
     "id": 2,
     "vehicleName": "CAR",
     "vehicleImage": "https://atlas-content-cdn.pixelsquid.com/stock-images/classic-european-compact-car-hatchback-4o7XZQ6-600.jpg",
     "vehicleSeat": 4,
     "ticketPrice": 100,
-    "vehicleDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore expedita quae, eligendi excepturi at dignissimos? Itaque reiciendis fuga quam est."
+    "vehicleDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore expedita quae."
   }, {
     "id": 3,
     "vehicleName": "BUS",
     "vehicleImage": "https://images.pond5.com/mitsubishi-fusou-aero-star-keio-3d-091539965_iconl.jpeg",
     "vehicleSeat": 20,
     "ticketPrice": 150,
-    "vehicleDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore expedita quae, eligendi excepturi at dignissimos? Itaque reiciendis fuga quam est."
+    "vehicleDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore expedita quae."
   }, {
     "id": 4,
     "vehicleName": "TRAIN",
     "vehicleImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCDdOazPvLU8M4dhtGMyTfecr_FeKJEp24kg&usqp=CAU",
     "vehicleSeat": 50,
     "ticketPrice": 200,
-    "vehicleDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore expedita quae, eligendi excepturi at dignissimos? Itaque reiciendis fuga quam est."
+    "vehicleDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore expedita quae."
   }
 ]

@@ -1,24 +1,44 @@
-import React from 'react';
-// import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+import React, { Component } from 'react';
+import { GoogleApiWrapper } from 'google-maps-react';
+import { Map, Marker } from 'google-maps-react';
 
-const ViewMap = () => {
+export class MapContainer extends Component {
+    state = {
+        showingInfoWindow: false,
+        activeMarker: {},
+        selectedPlace: {}
+    };
 
-    return (
-        <div>
-            
-        </div>
-        // code for google map(not working)
-        // <Map
-        //   google={this.props.google}
-        //   zoom={8}
-        //   initialCenter={{ lat: 47.444, lng: -122.176}}
-        // />
-    );
-};
+    onMarkerClick = (props, marker, e) =>
+        this.setState({
+            selectedPlace: props,
+            activeMarker: marker,
+            showingInfoWindow: true
+        });
 
-// export default GoogleApiWrapper({
-//     apiKey: 'AIzaSyC4x_Fic5-s4RB9UZTzS1pQYCfwwH5Xoms'
-//   })(ViewMap);
+    onMapClicked = (props) => {
+        if (this.state.showingInfoWindow) {
+            this.setState({
+                showingInfoWindow: false,
+                activeMarker: null
+            })
+        }
 
-export default ViewMap;
+    };
+
+
+
+    render() {
+        return (
+            <Map google={this.props.google}
+                onClick={this.onMapClicked}>
+                <Marker onClick={this.onMarkerClick}
+                    name={'Current location'} />
+            </Map>
+        )
+    }
+}
+
+export default GoogleApiWrapper({
+    apiKey: ('AIzaSyC0F5DNnDRiota6SU7UuU4qofmwwRMyynY')
+})(MapContainer)

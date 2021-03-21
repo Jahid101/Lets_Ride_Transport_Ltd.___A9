@@ -3,12 +3,12 @@
     width: 200px;
 }
 .cardInfo{
-    width: 450px;
+    width: 300px;
     border: 1px solid grey;
     border-radius: 15px;
     float: left;
     margin-top: 15px;
-    margin-left: 100px;
+    margin-left: 50px;
     margin-bottom: 15px;
     background-color: white;
 }

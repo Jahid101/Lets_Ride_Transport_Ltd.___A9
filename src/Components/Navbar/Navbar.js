@@ -1,28 +1,29 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
-// import firebase from '../Login/Firebase.Config';
+import firebase from "firebase/app";
+import "firebase/auth";
 
 const Navbar = () => {
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     const handleSignOut = () => {
-        // firebase.auth().signOut().then(() => {
-        //     let signedOutUser = {
-        //         isSignedIn: false,
-        //         name: '',
-        //         email: '',
-        //         password: '',
-        //         photo: '',
-        //         error: '',
-        //         success: false
-        //     }
-        //     setLoggedInUser(signedOutUser);
-        // })
-        //     .catch((error) => {
+        firebase.auth().signOut().then(() => {
+            let signedOutUser = {
+                isSignedIn: false,
+                name: '',
+                email: '',
+                password: '',
+                photo: '',
+                error: '',
+                success: false
+            }
+            setLoggedInUser(signedOutUser);
+        })
+            .catch((error) => {
 
-        //     });
+            });
     }
 
     return (

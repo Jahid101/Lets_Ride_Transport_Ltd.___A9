@@ -57,7 +57,7 @@ const Destination = () => {
                     <img class="ml-3" style={{ width: '40px' }} src="https://static.thenounproject.com/png/292059-200.png" alt=""/> <strong> {vehicle.vehicleSeat}</strong> <strong class="ml-5"> ${vehicle.ticketPrice}</strong>
                 </div>
             </div>
-            <div class="m-5">
+            <div class="container m-5 col-md-6 col-lg-6 col-sm-12">
                 <ViewMap></ViewMap>
             </div>
         </div>
