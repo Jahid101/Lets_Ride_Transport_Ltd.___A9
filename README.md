@@ -8,7 +8,7 @@
 
 ==> You have to have a account in order to book any ride.
 
-==> There is a map where you can easily understand your position and your nereby rides.
+==> There is a map where you can easily understand your position and your nearby rides.
  
 ![image](https://user-images.githubusercontent.com/76203694/116691393-92756b00-a9dc-11eb-8821-a04aef9408bd.png)
 
